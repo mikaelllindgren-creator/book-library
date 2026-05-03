@@ -4,8 +4,8 @@ import BookList from '@/components/BookList';
 
 export const dynamic = 'force-dynamic';
 
-export default function Home() {
-  const books = getAllBooks();
+export default async function Home() {
+  const books = await getAllBooks();
 
   return (
     <main className="max-w-lg mx-auto px-4 py-8 space-y-6">

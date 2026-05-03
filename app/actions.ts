@@ -11,11 +11,11 @@ export async function addBook(formData: FormData) {
   if (!title || !author) return;
   if (rating < 1 || rating > 5) return;
 
-  dbAddBook(title, author, rating);
+  await dbAddBook(title, author, rating);
   revalidatePath('/');
 }
 
 export async function deleteBook(id: number) {
-  dbDeleteBook(id);
+  await dbDeleteBook(id);
   revalidatePath('/');
 }
